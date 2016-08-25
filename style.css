@@ -1,32 +1,38 @@
-
+.container{
+  display:flex;
+  width: 150px;
+}
 
 select {
+  position: relative;
+  z-index: -10;
 
   /* make arrow and background */
 
-  background: linear-gradient(to right, grey, grey);
+  background:
+    linear-gradient(45deg, transparent 50%, grey 50%),
+    linear-gradient(135deg, grey 50%, transparent 50%),
+    linear-gradient(to right, grey, grey);
   background-position:
     calc(100% - 21px) calc(1em + 2px),
     calc(100% - 16px) calc(1em + 2px),
     100% 0;
   background-size:
-    20px 20px,
-    20px 20px,
+    5px 5px,
+    5px 5px,
     2.5em 2.5em;
   background-repeat: no-repeat;
 
   /* styling and reset */
 
-  border: 2px solid grey;
-  font-family:Arial;
-  font-size:14px;
+  border: thin solid blue;
+  font: 300 1em/100% "Helvetica Neue", Arial, sans-serif;
   line-height: 1.5em;
   padding: 0.5em 3.5em 0.5em 1em;
-  outline: 0;
 
   /* reset */
 
-  border-radius: 4;
+  border-radius: 0;
   margin: 0;      
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -34,3 +40,21 @@ select {
   -webkit-appearance:none;
   -moz-appearance:none;
 }
+
+.arrows{
+  position: absolute;
+  left:117px;
+  z-index: 10;
+}
+
+/* RESPONSIVE ARROWS */
+[class^=arr-]{
+  background-color: grey;
+  border:       solid white;
+  border-width: 0 .2em .2em 0;
+  display:      inline-block;
+  padding:      .20em;
+}
+
+.arr-up    {transform:rotate(-135deg); -webkit-transform:rotate(-135deg);}
+.arr-down  {transform:rotate(45deg);   -webkit-transform:rotate(45deg);}
