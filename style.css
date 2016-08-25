@@ -1,11 +1,11 @@
 .container{
   display:flex;
-  width: 150px;
+  width: 140px;
 }
 
 select {
 
-  /* make arrow and background */
+  /* make background for arrows */
 
   background:
     linear-gradient(45deg, transparent 50%, grey 50%),
@@ -29,8 +29,9 @@ select {
   padding: 0.5em 3.5em 0.5em 1em;
 
   /* reset */
-
-  border-radius: 0;
+  outline: 0;
+  border-radius: 4;
+  border-color: grey;
   margin: 0;      
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -47,12 +48,16 @@ select {
 
 /* RESPONSIVE ARROWS */
 [class^=arr-]{
+  height:5px;
+  width:5px;
   background-color: grey;
-  border:       solid white;
-  border-width: 0 .2em .2em 0;
+  border:       solid black;
+  border-width: 0 .1em .1em 0;
   display:      inline-block;
-  padding:      .20em;
+  padding:      -5px;
 }
 
 .arr-up    {transform:rotate(-135deg); -webkit-transform:rotate(-135deg);}
 .arr-down  {transform:rotate(45deg);   -webkit-transform:rotate(45deg);}
+
+
